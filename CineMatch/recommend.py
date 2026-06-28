@@ -1,21 +1,3 @@
-"""
-recommend.py
-------------
-Mid-range recommender: plain Keras Neural Collaborative Filtering.
-
-One single model (no two towers, no TFRS, no nearest-neighbor index):
-  user_id    --> Embedding --\
-  movie_id   --> Embedding ---+--> concat --> Dense --> Dense --> predicted rating
-  movie_genre--> Embedding --/
-
-Trained directly on (user_id, movie_id, genre) -> rating, same shape as
-any regression problem. To recommend for a user, we just score every
-movie they haven't rated yet and sort by predicted rating -- fine at this
-dataset's scale (a few thousand movies).
-
-Run:
-    python recommend.py
-"""
 import os
 import numpy as np
 import pandas as pd
